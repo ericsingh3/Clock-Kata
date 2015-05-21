@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="clockKata">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Clock-Kata</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-Controller="ClockController">
+    <div>
+        <label>12 Hour Clock</label>
+        <input type="radio" ng-model="content" value="first">
+        <br />
+        <label>24 Hour Clock</label>
+        <input type="radio" ng-model="content" value="second">
+    </div>
+    <span>
+        <p ng-show="content == 'first'">Current Time: {{time | date: 'mediumTime'}}</p>
+        <p ng-show="content == 'second'">Current Time: {{time | date: 'HH:mm:ss'}}</p>
+    </span>
+</body>
+</html>
